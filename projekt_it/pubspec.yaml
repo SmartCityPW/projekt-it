@@ -19,6 +19,8 @@ dependencies:
   go_router: ^12.1.1
   hooks_riverpod: ^2.4.9
   flutter_riverpod: ^2.4.9
+  carousel_slider: ^4.2.1
+  google_fonts: ^6.1.0
 
 dev_dependencies:
   flutter_test:
@@ -30,3 +32,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  
+  assets:
+    - lib/assets/images/
+    - lib/assets/icons/
