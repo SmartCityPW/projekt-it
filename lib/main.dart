@@ -22,35 +22,43 @@ class MyApp extends StatelessWidget {
   }
 }
 
-Widget buildCustomButton(String imagePath, String title, Function()? onTap) {
-  return InkWell(
-    onTap: onTap,
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Container(
-          clipBehavior: Clip.antiAlias,
-          height: 120,
-          width: 120,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(70.0),
-                topRight: Radius.circular(70.0)),
+class HomePageButton extends StatelessWidget {
+  String imagePath;
+  String title;
+  Function()? onTap;
+  HomePageButton(this.imagePath, this.title, this.onTap, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            clipBehavior: Clip.antiAlias,
+            height: 120,
+            width: 120,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(70.0),
+                  topRight: Radius.circular(70.0)),
+            ),
+            child: Image.asset(imagePath, fit: BoxFit.none),
           ),
-          child: Image.asset(imagePath, fit: BoxFit.none),
-        ),
-        SizedBox(
-          height: 4,
-        ),
-        Text(
-          title,
-          textAlign: TextAlign.center,
-          style:
-              FONT_HEADING_MEDIUM.copyWith(color: Color.fromRGBO(0, 0, 0, 1)),
-        )
-      ],
-    ),
-  );
+          SizedBox(
+            height: 4,
+          ),
+          Text(
+            title,
+            textAlign: TextAlign.center,
+            style:
+                FONT_HEADING_MEDIUM.copyWith(color: Color.fromRGBO(0, 0, 0, 1)),
+          )
+        ],
+      ),
+    );
+  }
 }
 
 class MyHomePage extends StatefulWidget {
@@ -161,18 +169,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      buildCustomButton(
+                      HomePageButton(
                           'lib/assets/home_page_map.jpg', "map", () => {}),
-                      buildCustomButton(
+                      HomePageButton(
                           'lib/assets/home_page_places.jpg', "places", () => {})
                     ]),
                 // children: <Widget>[Text("abcdefg"), Text("hijklmn")]),
                 Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      buildCustomButton('lib/assets/home_page_visited.jpg',
+                      HomePageButton('lib/assets/home_page_visited.jpg',
                           "visited", () => {}),
-                      buildCustomButton(
+                      HomePageButton(
                           'lib/assets/home_page_other.png', "other", () => {})
                     ]),
               ],
