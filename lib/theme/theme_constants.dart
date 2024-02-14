@@ -6,7 +6,7 @@ const COLOR_PRIMARY = Color.fromRGBO(87, 74, 115, 1);
 const COLOR_ACCENT = Color.fromRGBO(37, 32, 79, 1);
 const COLOR_BACK = Color.fromRGBO(234, 231, 220, 1);
 const FONT_BASIC = TextStyle(fontFamily: 'Montserrat', fontSize: 20);
-const FONT_FANCY_SMALL = TextStyle(fontFamily: 'Meddon', fontSize: 16);
+const FONT_FANCY_SMALL = TextStyle(fontFamily: 'Meddon', fontSize: 18);
 const FONT_HEADING_MEDIUM = TextStyle(fontFamily: 'Prata', fontSize: 24);
 
 ThemeData baseTheme = ThemeData(

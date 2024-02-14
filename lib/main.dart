@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'ArchVistaExplore',
       theme: baseTheme,
-      home: const MyHomePage(),
+      home: MyHomePage(),
     );
   }
 }
@@ -54,7 +54,26 @@ Widget buildCustomButton(String imagePath, String title, Function()? onTap) {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+  MyHomePage({super.key});
+
+  List<String> carouseleImagePaths = [
+    'lib/assets/carousele1.jpg',
+    'lib/assets/carousele2.jpg',
+    'lib/assets/carousele3.jpg',
+    'lib/assets/carousele4.png',
+    'lib/assets/carousele5.jpg',
+    'lib/assets/carousele6.jpg'
+  ];
+  List<String> carouseleImageNames = [
+    'Barbakan',
+    'Centrum',
+    'Rotunda',
+    'BUW',
+    'Stare Miasto',
+    'Kamienica Ochota'
+  ];
+
+  int currentImageIndex = 0;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -93,18 +112,40 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Text(
-                "hello User",
-                style: FONT_FANCY_SMALL.copyWith(
-                    color: Color.fromRGBO(212, 175, 55, 1)),
-                textAlign: TextAlign.left,
-              ),
+              Container(
+                  margin: EdgeInsets.only(left: 20),
+                  child: Text(
+                    "hello User",
+                    style: FONT_FANCY_SMALL.copyWith(
+                        color: Color.fromRGBO(212, 175, 55, 1)),
+                    textAlign: TextAlign.left,
+                  )),
               Text("what place will you visit today?",
                   style: FONT_HEADING_MEDIUM.copyWith(
                       color: Color.fromRGBO(255, 255, 255, 1)),
                   textAlign: TextAlign.center),
-              Image(image: AssetImage('lib/assets/home_page_main.png')),
-              Text("place name",
+              CarouselSlider(
+                options: CarouselOptions(
+                  autoPlay: true,
+                  onPageChanged: (index, reason) {
+                    setState(() {
+                      widget.currentImageIndex = index;
+                    });
+                  },
+                ),
+                items: widget.carouseleImagePaths.map((i) {
+                  return Builder(
+                    builder: (BuildContext context) {
+                      return Container(
+                          width: MediaQuery.of(context).size.width,
+                          margin: EdgeInsets.symmetric(horizontal: 5.0),
+                          decoration: BoxDecoration(color: COLOR_ACCENT),
+                          child: Image.asset(i));
+                    },
+                  );
+                }).toList(),
+              ),
+              Text(widget.carouseleImageNames[widget.currentImageIndex],
                   style: FONT_FANCY_SMALL.copyWith(
                       color: Color.fromRGBO(255, 255, 255, 1)),
                   textAlign: TextAlign.center),
