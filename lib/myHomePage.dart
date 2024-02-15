@@ -3,6 +3,7 @@ import 'package:projekt_it/theme/theme_constants.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:projekt_it/homePageButton.dart';
 import 'package:projekt_it/cameraPage.dart';
+import 'package:projekt_it/mapPage.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({super.key});
@@ -113,7 +114,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       HomePageButton(
-                          'lib/assets/home_page_map.jpg', "map", () => {}),
+                          'lib/assets/home_page_map.jpg',
+                          "map",
+                          () => {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => MapPage()))
+                              }),
                       HomePageButton(
                           'lib/assets/home_page_places.jpg', "places", () => {})
                     ]),
