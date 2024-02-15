@@ -1,5 +1,9 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:map_launcher/map_launcher.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:projekt_it/theme/theme_constants.dart';
 
 class MapPage extends StatefulWidget {
@@ -12,7 +16,7 @@ class MapPage extends StatefulWidget {
 class _MapPageState extends State<MapPage> {
   // String? _currentAddress;
   Position? _currentPosition;
-  String text = "";
+  String statusText = "";
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +35,24 @@ class _MapPageState extends State<MapPage> {
             SizedBox(height: 50),
             ElevatedButton(
                 onPressed: this._getCurrentPosition,
-                child: Text("Update location"))
+                child: Text("Update location")),
+            SizedBox(height: 50),
+            ElevatedButton(
+                onPressed: () {
+                  if (_currentPosition?.latitude == null ||
+                      _currentPosition?.longitude == null) {
+                    setState(() {
+                      statusText = "First update your location";
+                    });
+                  } else {
+                    setState(() {
+                      statusText = "";
+                    });
+                    openMapsSheet(context);
+                  }
+                },
+                child: Text("Show Maps")),
+            Text(statusText)
           ]),
         ));
   }
@@ -74,5 +95,45 @@ class _MapPageState extends State<MapPage> {
     }).catchError((e) {
       debugPrint(e);
     });
+  }
+
+  openMapsSheet(context) async {
+    try {
+      final coords = Coords(this._currentPosition?.latitude ?? 0,
+          this._currentPosition?.longitude ?? 0);
+      final title = "Your location";
+      final availableMaps = await MapLauncher.installedMaps;
+
+      showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context) {
+          return SafeArea(
+            child: SingleChildScrollView(
+              child: Container(
+                child: Wrap(
+                  children: <Widget>[
+                    for (var map in availableMaps)
+                      ListTile(
+                        onTap: () => map.showMarker(
+                          coords: coords,
+                          title: title,
+                        ),
+                        title: Text(map.mapName),
+                        leading: SvgPicture.asset(
+                          map.icon,
+                          height: 30.0,
+                          width: 30.0,
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
+      );
+    } catch (e) {
+      print(e);
+    }
   }
 }
