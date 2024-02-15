@@ -12,13 +12,13 @@ const FONT_HEADING_MEDIUM = TextStyle(fontFamily: 'Prata', fontSize: 24);
 ThemeData baseTheme = ThemeData(
     brightness: Brightness.light,
     // primaryColor: COLOR_PRIMARY,
-    floatingActionButtonTheme:
-        FloatingActionButtonThemeData(backgroundColor: COLOR_ACCENT),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ButtonStyle(
-            padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0)),
-            shape: MaterialStateProperty.all<OutlinedBorder>(
-                RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0))))),
+    // floatingActionButtonTheme:
+    //     FloatingActionButtonThemeData(backgroundColor: COLOR_ACCENT),
+    // elevatedButtonTheme: ElevatedButtonThemeData(
+    //     style: ButtonStyle(
+    //         padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+    //             EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0)),
+    //         shape: MaterialStateProperty.all<OutlinedBorder>(
+    //             RoundedRectangleBorder(
+    //                 borderRadius: BorderRadius.circular(20.0))))),
     fontFamily: 'Montserrat');

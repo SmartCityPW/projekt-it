@@ -17,18 +17,23 @@ class _MapPageState extends State<MapPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(children: <Widget>[
-      AppBar(
-        backgroundColor: COLOR_ACCENT,
-        iconTheme: IconThemeData(
-          color: Colors.white, //change your color here
+        appBar: AppBar(
+          backgroundColor: COLOR_ACCENT,
+          iconTheme: IconThemeData(
+            color: Colors.white, //change your color here
+          ),
         ),
-      ),
-      Text('LAT: ${_currentPosition?.latitude ?? "none"}'),
-      Text('LNG: ${_currentPosition?.longitude ?? "none"}'),
-      ElevatedButton(
-          onPressed: this._getCurrentPosition, child: Text("Update location"))
-    ]));
+        body: Center(
+          child: Column(children: <Widget>[
+            SizedBox(height: 50),
+            Text('LAT: ${_currentPosition?.latitude ?? "none"}'),
+            Text('LNG: ${_currentPosition?.longitude ?? "none"}'),
+            SizedBox(height: 50),
+            ElevatedButton(
+                onPressed: this._getCurrentPosition,
+                child: Text("Update location"))
+          ]),
+        ));
   }
 
   Future<bool> _handleLocationPermission() async {
