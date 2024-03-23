@@ -10,12 +10,12 @@ class HomePage extends StatefulWidget {
   HomePage({super.key});
 
   List<String> carouseleImagePaths = [
-    'lib/assets/carousele1.jpg',
-    'lib/assets/carousele2.jpg',
-    'lib/assets/carousele3.jpg',
-    'lib/assets/carousele4.png',
-    'lib/assets/carousele5.jpg',
-    'lib/assets/carousele6.jpg'
+    'lib/assets/barbakan.jpg',
+    'lib/assets/centrum.jpg',
+    'lib/assets/rotunda.jpg',
+    'lib/assets/buw.png',
+    'lib/assets/starowka.jpg',
+    'lib/assets/kamienica.jpg'
   ];
   List<String> carouseleImageNames = [
     'Barbakan',
