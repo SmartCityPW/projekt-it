@@ -13,6 +13,30 @@ class PlaceCard extends StatefulWidget {
 class _PlaceCardState extends State<PlaceCard> {
   @override
   Widget build(BuildContext context) {
-    return Card(child: Text(widget.placeData.name));
+    return Card(
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+          Expanded(
+            flex: 2,
+            child: Column(
+              children: <Widget>[
+                Text(
+                  widget.placeData.name,
+                  style: fontBody,
+                ),
+                Expanded(child: Image.asset(widget.placeData.imgPaths[0]))
+              ],
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: IconButton(
+                onPressed: () {}, icon: const Icon(Icons.location_on_sharp)),
+          ),
+          Expanded(
+              flex: 1,
+              child: IconButton(onPressed: () {}, icon: const Icon(Icons.list)))
+        ]));
   }
 }

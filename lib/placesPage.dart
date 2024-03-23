@@ -27,6 +27,8 @@ class _PlacesPageState extends State<PlacesPage> {
       ),
       body: ListView.builder(
         itemCount: placesData.length,
+        itemExtent: MediaQuery.of(context).size.height / 5,
+        padding: EdgeInsets.only(top: 20),
         itemBuilder: (context, index) {
           return PlaceCard(placesData[index]);
         },

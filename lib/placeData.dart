@@ -63,4 +63,26 @@ List<PlaceData> placesData = [
       "20",
       52.95,
       20.7),
+  PlaceData(
+      "Barbakan",
+      ["lib/assets/barbakan.jpg"],
+      "Barbakan przy Starówce opis",
+      ["mury", "obok starówki"],
+      "1500",
+      "Świętojańska",
+      "3",
+      52,
+      20.2),
+  PlaceData("Kamienica", ["lib/assets/kamienica.jpg"], "Zwykły budynek opis",
+      ["budynek", "okrągły"], "1970", "Dworkowa", "11", 52.8, 20.19),
+  PlaceData(
+      "Starówka",
+      ["lib/assets/starowka.jpg", "lib/assets/nowy_swiat_stare.jpg"],
+      "Starówka opis",
+      ["nowy świat", "dużo sklepów"],
+      "1600",
+      "Nowy Świat",
+      "1",
+      52.3,
+      20.557)
 ];
