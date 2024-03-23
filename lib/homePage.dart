@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: COLOR_ACCENT,
+          backgroundColor: colorAccent,
           toolbarHeight: kToolbarHeight + 10,
           actions: [
             Column(
@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(10.0),
                   bottomRight: Radius.circular(10.0)),
-              color: COLOR_ACCENT),
+              color: colorAccent),
           child: Center(
               child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -69,12 +69,12 @@ class _HomePageState extends State<HomePage> {
                   margin: const EdgeInsets.only(left: 20),
                   child: Text(
                     "hello User",
-                    style: FONT_FANCY_SMALL.copyWith(
+                    style: fontFancySmall.copyWith(
                         color: const Color.fromRGBO(212, 175, 55, 1)),
                     textAlign: TextAlign.left,
                   )),
               Text("what place will you visit today?",
-                  style: FONT_HEADING_MEDIUM.copyWith(
+                  style: fontHeaderMedium.copyWith(
                       color: const Color.fromRGBO(255, 255, 255, 1)),
                   textAlign: TextAlign.center),
               CarouselSlider(
@@ -92,14 +92,14 @@ class _HomePageState extends State<HomePage> {
                       return Container(
                           width: MediaQuery.of(context).size.width,
                           margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                          decoration: const BoxDecoration(color: COLOR_ACCENT),
+                          decoration: const BoxDecoration(color: colorAccent),
                           child: Image.asset(i));
                     },
                   );
                 }).toList(),
               ),
               Text(widget.carouseleImageNames[widget.currentImageIndex],
-                  style: FONT_FANCY_SMALL.copyWith(
+                  style: fontFancySmall.copyWith(
                       color: const Color.fromRGBO(255, 255, 255, 1)),
                   textAlign: TextAlign.center),
             ],
@@ -151,7 +151,7 @@ class _HomePageState extends State<HomePage> {
           )),
         ),
       ]),
-      backgroundColor: COLOR_BACK,
+      backgroundColor: colorBack,
     );
   }
 }

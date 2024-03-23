@@ -22,7 +22,7 @@ class _MapPageState extends State<MapPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: COLOR_ACCENT,
+          backgroundColor: colorAccent,
           iconTheme: IconThemeData(
             color: Colors.white, //change your color here
           ),

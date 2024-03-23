@@ -31,8 +31,8 @@ class HomePageButton extends StatelessWidget {
           Text(
             title,
             textAlign: TextAlign.center,
-            style:
-                FONT_HEADING_MEDIUM.copyWith(color: const Color.fromRGBO(0, 0, 0, 1)),
+            style: fontHeaderMedium.copyWith(
+                color: const Color.fromRGBO(0, 0, 0, 1)),
           )
         ],
       ),
