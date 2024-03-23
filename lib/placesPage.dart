@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projekt_it/theme/theme_constants.dart';
 import 'package:projekt_it/placeData.dart';
+import 'package:projekt_it/placeCard.dart';
 
 class PlacesPage extends StatefulWidget {
   PlacesPage({super.key});
@@ -27,7 +28,7 @@ class _PlacesPageState extends State<PlacesPage> {
       body: ListView.builder(
         itemCount: placesData.length,
         itemBuilder: (context, index) {
-          return Card(child: Text(placesData[index].name));
+          return PlaceCard(placesData[index]);
         },
       ),
     );
