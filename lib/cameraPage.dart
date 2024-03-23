@@ -51,7 +51,7 @@ class _CameraPageState extends State<CameraPage> {
         body: Column(children: <Widget>[
       AppBar(
         backgroundColor: COLOR_ACCENT,
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.white, //change your color here
         ),
       ),

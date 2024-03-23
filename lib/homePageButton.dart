@@ -18,21 +18,21 @@ class HomePageButton extends StatelessWidget {
             clipBehavior: Clip.antiAlias,
             height: 120,
             width: 120,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(70.0),
                   topRight: Radius.circular(70.0)),
             ),
             child: Image.asset(imagePath, fit: BoxFit.none),
           ),
-          SizedBox(
+          const SizedBox(
             height: 4,
           ),
           Text(
             title,
             textAlign: TextAlign.center,
             style:
-                FONT_HEADING_MEDIUM.copyWith(color: Color.fromRGBO(0, 0, 0, 1)),
+                FONT_HEADING_MEDIUM.copyWith(color: const Color.fromRGBO(0, 0, 0, 1)),
           )
         ],
       ),
