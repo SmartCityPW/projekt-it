@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:map_launcher/map_launcher.dart';
 import 'package:projekt_it/theme/theme_constants.dart';
+import 'package:projekt_it/placeDetailsPage.dart';
 import 'package:projekt_it/placeData.dart';
 
 class PlaceCard extends StatefulWidget {
@@ -52,7 +53,15 @@ class _PlaceCardState extends State<PlaceCard> {
           ),
           Expanded(
               flex: 1,
-              child: IconButton(onPressed: () {}, icon: const Icon(Icons.list)))
+              child: IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                PlaceDetailsPage(widget.placeData)));
+                  },
+                  icon: const Icon(Icons.list)))
         ]));
   }
 }
