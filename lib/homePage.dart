@@ -5,8 +5,8 @@ import 'package:projekt_it/homePageButton.dart';
 import 'package:projekt_it/cameraPage.dart';
 import 'package:projekt_it/mapPage.dart';
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({super.key});
+class HomePage extends StatefulWidget {
+  HomePage({super.key});
 
   List<String> carouseleImagePaths = [
     'lib/assets/carousele1.jpg',
@@ -28,10 +28,10 @@ class MyHomePage extends StatefulWidget {
   int currentImageIndex = 0;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

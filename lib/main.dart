@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:projekt_it/theme/theme_constants.dart';
-import 'package:projekt_it/myHomePage.dart';
+import 'package:projekt_it/homePage.dart';
 
 // void main() {
 //   runApp(const MyApp());
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'ArchVistaExplore',
       theme: baseTheme,
-      home: MyHomePage(),
+      home: HomePage(),
     );
   }
 }
