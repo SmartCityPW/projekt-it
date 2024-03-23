@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:map_launcher/map_launcher.dart';
 import 'package:projekt_it/theme/theme_constants.dart';
 import 'package:projekt_it/placeData.dart';
 
@@ -32,7 +33,22 @@ class _PlaceCardState extends State<PlaceCard> {
           Expanded(
             flex: 1,
             child: IconButton(
-                onPressed: () {}, icon: const Icon(Icons.location_on_sharp)),
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Text(widget.placeData.name),
+                      content: Text(
+                          "${widget.placeData.street} ${widget.placeData.streetNr}\nlat: ${widget.placeData.latitude} lng: ${widget.placeData.longtitude}"),
+                      actions: [
+                        TextButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: const Text("OK"))
+                      ],
+                    ),
+                  );
+                },
+                icon: const Icon(Icons.location_on_sharp)),
           ),
           Expanded(
               flex: 1,
