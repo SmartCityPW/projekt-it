@@ -20,6 +20,28 @@ class _PlaceDetailsPageState extends State<PlaceDetailsPage> {
             color: Colors.white,
           ),
         ),
-        body: Text(widget.placeData.name));
+        body: Column(
+          children: [
+                Text(
+                  widget.placeData.name,
+                  style: fontHeaderMedium,
+                ),
+                Text(
+                  widget.placeData.constructionDate,
+                  style: fontFancySmall,
+                ),
+                Image.asset(widget.placeData.imgPaths[0]),
+                Divider()
+              ] +
+              [
+                for (String funFact in widget.placeData.funFacts) Text(funFact)
+              ] +
+              [
+                Divider(),
+                Text(
+                  widget.placeData.description,
+                )
+              ],
+        ));
   }
 }
