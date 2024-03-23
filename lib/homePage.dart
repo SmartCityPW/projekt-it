@@ -4,6 +4,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:projekt_it/homePageButton.dart';
 import 'package:projekt_it/cameraPage.dart';
 import 'package:projekt_it/mapPage.dart';
+import 'package:projekt_it/placesPage.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({super.key});
@@ -122,9 +123,15 @@ class _HomePageState extends State<HomePage> {
                                       builder: (context) => MapPage()))
                             }),
                     HomePageButton(
-                        'lib/assets/home_page_places.jpg', "places", () => {})
+                        'lib/assets/home_page_places.jpg',
+                        "places",
+                        () => {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => PlacesPage()))
+                            })
                   ]),
-              // children: <Widget>[Text("abcdefg"), Text("hijklmn")]),
               Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
@@ -132,7 +139,7 @@ class _HomePageState extends State<HomePage> {
                         "visited", () => {}),
                     HomePageButton(
                         'lib/assets/home_page_other.png',
-                        "other",
+                        "camera",
                         () => {
                               Navigator.push(
                                   context,
