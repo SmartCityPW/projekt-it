@@ -127,7 +127,7 @@ List<PlaceData> placesData = [
       [
         "lib/assets/starowka.jpg",
         "lib/assets/starowka_stare.jpg",
-        "lib/assets/starowka_stare.2jpg",
+        "lib/assets/starowka_stare2.jpg",
         "lib/assets/starowka_stare3.jpg",
         "lib/assets/starowka_stare4.jpg"
       ],
