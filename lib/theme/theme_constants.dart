@@ -7,7 +7,8 @@ const colorAccent = Color.fromRGBO(37, 32, 79, 1);
 const colorBack = Color.fromRGBO(234, 231, 220, 1);
 
 const fontBody = TextStyle(fontFamily: 'Montserrat', fontSize: 20);
-const fontHeaderMedium = TextStyle(fontFamily: 'Prata', fontSize: 24);
+const fontHeaderMedium =
+    TextStyle(fontFamily: 'Libre Baskerville', fontSize: 24);
 const fontFancySmall = TextStyle(fontFamily: 'Meddon', fontSize: 18);
 
 ThemeData baseTheme =

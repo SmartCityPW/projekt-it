@@ -36,9 +36,9 @@ flutter:
         style: italic
       - asset: lib/fonts/montserrat/Montserrat-Bold.ttf
         weight: 700
-    - family: Prata
+    - family: Libre Baskerville
       fonts:
-      - asset: lib/fonts/prata/Prata-Regular.ttf
+      - asset: lib/fonts/libre_baskerville/LibreBaskerville-Regular.ttf
     - family: Meddon
       fonts:
       - asset: lib/fonts/meddon/Meddon-Regular.ttf
