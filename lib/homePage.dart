@@ -53,6 +53,7 @@ class _HomePageState extends State<HomePage> {
             )
           ]),
       body: Column(children: <Widget>[
+        // Welcome text and Carousel
         Expanded(
             child: Container(
           decoration: const BoxDecoration(
@@ -105,6 +106,7 @@ class _HomePageState extends State<HomePage> {
             ],
           )),
         )),
+        // Menu
         Expanded(
           child: Center(
               child: Column(

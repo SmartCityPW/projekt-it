@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projekt_it/theme/theme_constants.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:projekt_it/placeData.dart';
 
 class PlaceDetailsPage extends StatefulWidget {
@@ -30,7 +31,18 @@ class _PlaceDetailsPageState extends State<PlaceDetailsPage> {
                   widget.placeData.constructionDate,
                   style: fontFancySmall,
                 ),
-                Image.asset(widget.placeData.imgPaths[0]),
+                CarouselSlider(
+                  options: CarouselOptions(
+                    autoPlay: true,
+                  ),
+                  items: widget.placeData.imgPaths.map((i) {
+                    return Builder(
+                      builder: (BuildContext context) {
+                        return Image.asset(i);
+                      },
+                    );
+                  }).toList(),
+                ),
                 Divider()
               ] +
               [
