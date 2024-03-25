@@ -22,40 +22,70 @@ class _PlaceDetailsPageState extends State<PlaceDetailsPage> {
           ),
         ),
         body: SingleChildScrollView(
-          child: Column(
-            children: [
-                  Text(
-                    widget.placeData.name,
-                    style: fontHeaderMedium,
-                  ),
-                  Text(
-                    widget.placeData.constructionDate,
-                    style: fontFancySmall,
-                  ),
-                  CarouselSlider(
-                    options: CarouselOptions(
-                      autoPlay: true,
+          child: Padding(
+            padding: const EdgeInsets.only(top: 10, bottom: 20),
+            child: Column(
+              children: [
+                Text(
+                  widget.placeData.name,
+                  style: fontHeaderMedium,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Text(
+                      widget.placeData.constructionDate,
+                      style: fontFancySmall,
                     ),
-                    items: widget.placeData.imgPaths.map((i) {
-                      return Builder(
-                        builder: (BuildContext context) {
-                          return Image.asset(i);
-                        },
-                      );
-                    }).toList(),
+                    Wrap(
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      children: [
+                        Text(
+                          "${widget.placeData.street} ${widget.placeData.streetNr}",
+                          style: fontBody,
+                        ),
+                        IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.location_on_sharp)),
+                      ],
+                    )
+                  ],
+                ),
+                CarouselSlider(
+                  options: CarouselOptions(
+                    autoPlay: true,
                   ),
-                  Divider()
-                ] +
-                [
-                  for (String funFact in widget.placeData.funFacts)
-                    Text(funFact)
-                ] +
-                [
-                  Divider(),
-                  Text(
+                  items: widget.placeData.imgPaths.map((i) {
+                    return Builder(
+                      builder: (BuildContext context) {
+                        return Image.asset(i);
+                      },
+                    );
+                  }).toList(),
+                ),
+                Divider(),
+                Container(
+                  alignment: Alignment.centerLeft,
+                  padding: EdgeInsets.only(left: 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      for (String funFact in widget.placeData.funFacts)
+                        Text(
+                          "- ${funFact}",
+                        )
+                    ],
+                  ),
+                ),
+                Divider(),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
+                  child: Text(
                     widget.placeData.description,
-                  )
-                ],
+                  ),
+                )
+              ],
+            ),
           ),
         ));
   }
