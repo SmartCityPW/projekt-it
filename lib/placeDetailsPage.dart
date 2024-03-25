@@ -35,7 +35,7 @@ class _PlaceDetailsPageState extends State<PlaceDetailsPage> {
                   children: <Widget>[
                     Text(
                       widget.placeData.constructionDate,
-                      style: fontFancySmall,
+                      style: fontHeaderMedium.copyWith(fontSize: 19),
                     ),
                     Wrap(
                       crossAxisAlignment: WrapCrossAlignment.center,
