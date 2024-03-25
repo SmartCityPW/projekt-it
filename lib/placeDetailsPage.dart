@@ -21,39 +21,42 @@ class _PlaceDetailsPageState extends State<PlaceDetailsPage> {
             color: Colors.white,
           ),
         ),
-        body: Column(
-          children: [
-                Text(
-                  widget.placeData.name,
-                  style: fontHeaderMedium,
-                ),
-                Text(
-                  widget.placeData.constructionDate,
-                  style: fontFancySmall,
-                ),
-                CarouselSlider(
-                  options: CarouselOptions(
-                    autoPlay: true,
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+                  Text(
+                    widget.placeData.name,
+                    style: fontHeaderMedium,
                   ),
-                  items: widget.placeData.imgPaths.map((i) {
-                    return Builder(
-                      builder: (BuildContext context) {
-                        return Image.asset(i);
-                      },
-                    );
-                  }).toList(),
-                ),
-                Divider()
-              ] +
-              [
-                for (String funFact in widget.placeData.funFacts) Text(funFact)
-              ] +
-              [
-                Divider(),
-                Text(
-                  widget.placeData.description,
-                )
-              ],
+                  Text(
+                    widget.placeData.constructionDate,
+                    style: fontFancySmall,
+                  ),
+                  CarouselSlider(
+                    options: CarouselOptions(
+                      autoPlay: true,
+                    ),
+                    items: widget.placeData.imgPaths.map((i) {
+                      return Builder(
+                        builder: (BuildContext context) {
+                          return Image.asset(i);
+                        },
+                      );
+                    }).toList(),
+                  ),
+                  Divider()
+                ] +
+                [
+                  for (String funFact in widget.placeData.funFacts)
+                    Text(funFact)
+                ] +
+                [
+                  Divider(),
+                  Text(
+                    widget.placeData.description,
+                  )
+                ],
+          ),
         ));
   }
 }
