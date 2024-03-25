@@ -5,9 +5,6 @@ import 'package:camera/camera.dart';
 import 'package:projekt_it/theme/theme_constants.dart';
 import 'package:projekt_it/homePage.dart';
 
-// void main() {
-//   runApp(const MyApp());
-// }
 late List<CameraDescription> _cameras;
 List<CameraDescription> getCameras() {
   return _cameras;
@@ -22,11 +19,10 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'ArchVistaExplore',
+      title: 'ProjectIT',
       theme: baseTheme,
       home: HomePage(),
     );
